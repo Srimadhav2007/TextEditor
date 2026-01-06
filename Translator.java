@@ -23,7 +23,7 @@ public class Translator{
             else map.put(key.charAt(0),props.getProperty(key));
         }
         Properties props2=new Properties();
-        try(FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+File.separator+"Inverse_Mapping.properties")){
+        try(FileInputStream fis=new FileInputStream("Inverse_Mapping.properties")){
             props2.load(fis);
         } catch (Exception e) {
             throw new RuntimeException("Failed to load Mapping.properties", e);

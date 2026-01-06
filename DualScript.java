@@ -92,13 +92,14 @@ public class DualScript extends JPanel{
                     greek.setText(greek.getText().substring(0,greekCaret)+translator.encodeEnToPs(k.getKeyChar())+greek.getText().substring(greekCaret));
                 }
                 else if(k.getKeyCode()==KeyEvent.VK_BACK_SPACE){
-                    String s = greek.getText();
+                    /*String s = greek.getText();
                     if(s.substring(s.length()-1).equals("'")){
                         greek.setText(s.substring(0,greekCaret-2)+s.substring(greekCaret));
                     }
                     else{
                         greek.setText(s.substring(0,greekCaret-1)+s.substring(greekCaret));
-                    }
+                    }*/
+                   greek.setText(greek.getText().substring(0,greekCaret-translator.translateEnToPs(english.getText().substring(english.getCaretPosition()-1,english.getCaretPosition())).length())+greek.getText().substring(greekCaret));
                 }
                 else if(k.getKeyCode()==KeyEvent.VK_V&&k.isControlDown()){
                     try {
